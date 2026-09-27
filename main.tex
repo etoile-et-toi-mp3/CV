@@ -1,0 +1,195 @@
+% !TeX program = xelatex
+%%%%%%%%%%%%%%%%%
+% Yong-Wei Fu — three-page academic CV
+% Based on altacv.cls v1.7.4
+%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\PassOptionsToPackage{lowtilde}{url}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper,normalphoto]{altacv}
+
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+
+\iftutex
+  % XeLaTeX or LuaLaTeX uses fontspec automatically
+  \setmainfont{Lato}
+  \IfFileExists{fonts/Gotham-Bold.otf}{%
+    \newfontfamily\headingfont[
+      Path=fonts/,
+      UprightFont=Gotham-Bold.otf,
+      BoldFont=Gotham-Bold.otf
+    ]{Gotham Bold}%
+  }{%
+    \newfontfamily\headingfont{Lato Bold}%
+  }
+  \IfFontExistsTF{Noto Sans JP}{%
+    \newfontfamily\japanesefont{Noto Sans JP}
+  }{%
+    \IfFontExistsTF{Noto Sans TC}{%
+      \newfontfamily\japanesefont{Noto Sans TC}
+    }{\let\japanesefont\relax}%
+  }
+  \newcommand{\jptext}[1]{{\japanesefont #1}}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+  \usepackage{CJKutf8}
+  \newcommand{\headingfont}{\sffamily}
+  \newcommand{\jptext}[1]{\begin{CJK*}{UTF8}{song}#1\end{CJK*}}
+\fi
+
+% Colors
+\definecolor{IFBlue}{HTML}{0F6688}
+\definecolor{IFDarkBlue}{HTML}{00425C}
+\definecolor{IFLightBlue}{HTML}{228FBD}
+\definecolor{IFGrey}{HTML}{6D6E71}
+\definecolor{IFDarkGrey}{HTML}{231F20}
+
+\colorlet{heading}{IFBlue}
+\colorlet{accent}{IFLightBlue}
+\colorlet{emphasis}{IFDarkGrey}
+\colorlet{body}{IFGrey}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+\renewcommand{\namefont}{\headingfont\Huge\bfseries}
+\renewcommand{\taglinefont}{\headingfont\large\bfseries}
+\renewcommand{\cvsectionfont}{\headingfont\Large\bfseries}
+\renewcommand{\cvsubsectionfont}{\headingfont\large\bfseries}
+\renewcommand{\cveventtitlefont}{\headingfont\large\bfseries}
+\renewcommand{\cveventsubtitlefont}{\headingfont\normalsize\bfseries}
+
+\begin{document}
+
+\name{Yong-Wei Fu}
+\tagline{NYCU Computer Science\\Incoming Exchange Student at UTokyo}
+
+\vspace*{-0.35cm}
+\begin{fullwidth}
+  \begin{minipage}[t]{0.58\linewidth}
+    \vspace{0pt}
+    {\namefont\color{name}\MakeUppercase{Yong-Wei Fu}\par}
+    \medskip
+    {\taglinefont\color{tagline}NYCU Computer Science\\Incoming Exchange Student at UTokyo\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.39\linewidth}
+    \vspace{0pt}\personalinfofont
+    \hfill
+    \begin{tabular}{@{}r@{\hspace{0.7em}}l@{}}
+      \textcolor{accent}{\faAt} & \href{mailto:willyfu0905.cs12@nycu.edu.tw}{willyfu0905.cs12@nycu.edu.tw} \\[0.35em]
+      \textcolor{accent}{\faPhone} & \href{tel:+886906083157}{+886-906-083-157} \\[0.35em]
+      \textcolor{accent}{\cvLocationMarker} & Hsinchu, Taiwan \\[0.35em]
+      \textcolor{accent}{\faGithub} & \href{https://github.com/etoile-et-toi-mp3}{GitHub} \\[0.35em]
+      \textcolor{accent}{\faLinkedin} & \href{https://www.linkedin.com/in/\%E6\%B0\%B8\%E5\%A8\%81-\%E5\%82\%85-3097ab3b9}{LinkedIn}
+    \end{tabular}
+  \end{minipage}
+\end{fullwidth}
+
+\cvsection[page1sidebar]{Education}
+
+\cvevent{Exchange Student, Dept. of Information and Communication Engineering}{The University of Tokyo}{April 2027 -- July 2027 (Expected)}{Tokyo, Japan}
+\divider
+
+\cvevent{B.S. in Computer Science}{National Yang Ming Chiao Tung University (NYCU)}{Sept. 2023 -- June 2027 (Expected)}{Hsinchu, Taiwan}
+\begin{itemize}
+  \item \textbf{GPA:} 4.12/4.3; department rank: Top 15.23\% (29/197).
+  \item Enrolled in NYCU's \textbf{Art and Music Cross-Domain Program} as a second specialization.
+  \item \textbf{Selected coursework (all A+):} Algorithms; Data Structures \& Object-Oriented Programming (Top 5\%); Machine Learning; Linear Algebra; Computer System Administration; and graduate-level Cryptographic Engineering.
+\end{itemize}
+
+\cvsection{Honors \& Awards}
+
+\cvevent{Academic Excellence Award}{National Yang Ming Chiao Tung University}{Fall 2023}{Hsinchu, Taiwan}
+\begin{itemize}
+  \item Ranked 2nd in the department (Top 1.05\%) with a semester GPA of 4.27/4.3.
+\end{itemize}
+\divider
+
+\cvevent{Scholarship for Excellence in Fundamental Courses}{National Yang Ming Chiao Tung University}{Spring 2024}{Hsinchu, Taiwan}
+\begin{itemize}
+  \item Recognized for ranking in the top 5\% of Data Structures and Object-Oriented Programming.
+\end{itemize}
+
+\begin{fullwidth}
+\cvsection{Publication}
+
+\cvevent{Bring Music The Horizon:\\Music-Driven $360^{\circ}$ Video Generation}{Kai Hsu Tsai, \textbf{Yong Wei Fu}, Hung I Yang, Yu-Chih Chen}{2026 \quad \href{https://arxiv.org/abs/2607.13471}{\textcolor{accent}{\faIcon{file}}\,arXiv} \quad \href{https://github.com/nycu-m3-lab/Bring_Music_The_Horizon}{\textcolor{accent}{\faGithub}\,GitHub}}{AVGenL, ECCV 2026 \quad \href{https://etoile-et-toi-mp3.github.io/BMTH_Project_Page/}{\textcolor{accent}{\faGlobe}\,Project}}
+\begin{itemize}
+  \item \textbf{Accepted by the Third Workshop on Audio-Visual Generation and Learning (AVGenL); presented as both a poster and a short oral talk at ECCV 2026.}
+  \item Undergraduate Research Assistant in the M$^3$ Lab under Prof. Yu-Chih Chen, with \textbf{NSTC Undergraduate Research Project} funding (Summer 2025--Present).
+  \item Engineered a Music Information Retrieval pipeline that segments songs at structural downbeats and predicts continuous valence--arousal trajectories for visual guidance.
+  \item Retrained EmotiCrafter on a self-curated dataset to reduce human-activity artifacts and extract cleaner emotional guidance vectors.
+  \item Integrated SEGA guidance with image-to-video models to synthesize temporally and emotionally consistent $360^{\circ}$ transition videos.
+\end{itemize}
+\end{fullwidth}
+
+\clearpage
+
+\begin{fullwidth}
+\cvsection{Selected Projects \& Competitions}
+
+\cvevent{CAT: Context-Aware Bot}{2nd Place Overall | 1st Place, AMD Track}{Sept. 19--20, 2026}{Meichu Hackathon}
+\begin{itemize}
+  \item Built a Physical AI companion combining an ESP32-based plush robot with pressure, microphone, camera, and LCD-face modules.
+  \item Deployed the speech-to-text model and contributed to the dataflow across the robot, an AMD local AI PC, and a remote AMD Instinct MI300 server.
+  \item Proposed the structured fields for 30-second user-activity snapshots, enabling efficient context extraction and persistent working-session memory for context-aware emotional support.
+\end{itemize}
+
+\divider
+
+\cvevent{\jptext{LINE ツォンサー}: Capturing Everyday Happiness}{Semifinalist, LINE FRESH 2025 Campus Competition}{Sept.--Nov. 2025}{Team Project}
+\begin{itemize}
+  \item Designed and prototyped a low-friction LINE Bot for recording text and image-based life events, generating AI-assisted daily, weekly, and monthly reflections, searching memories semantically, and tracking personal growth goals.
+  \item Validated the concept through \textbf{322 survey responses} and \textbf{10 user interviews}; 82\% of respondents believed frictionless recording could improve well-being.
+  \item Iterated the prototype from user feedback, replacing conventional to-do management with low-pressure goal and growth tracking and adding customizable reminders and richer visual recaps.
+\end{itemize}
+
+\divider
+
+\cvevent{Customized Dressing Benchmark (C.D.B.)}{AI-Driven Fashion Advisor}{May 2025}{NYCU \quad \href{https://github.com/etoile-et-toi-mp3/NYCU_113S_IntroToAI_FinalProject}{\textcolor{accent}{\faGithub}\,GitHub}}
+\begin{itemize}
+  \item Built a fashion-advice system using Fashion-CLIP for visual features and LLaVA to generate personalized outfit recommendations.
+  \item Compared Fashion-CLIP embeddings against SimCLR and ResNet baselines to evaluate representation quality.
+  \item Received the \textbf{Most Popular Award} and \textbf{Most Creative Presentation Award} among 70 teams.
+\end{itemize}
+
+\divider
+
+\cvevent{Four-Player Online Mahjong Simulator}{C / TCP Client--Server Application}{Sept. 2024--Jan. 2025}{NYCU \quad \href{https://github.com/etoile-et-toi-mp3/NYCU_113F_IntroToNetworkProg_FinalProject}{\textcolor{accent}{\faGithub}\,GitHub}}
+\begin{itemize}
+  \item Co-developed a four-player online Mahjong game in C using a TCP client--server architecture, synchronizing player connections, turns, and shared game state across four clients.
+  \item Designed a custom communication protocol and server-side game engine to coordinate player actions, handle disconnections, and manage multi-round sessions.
+  \item Implemented the game's rule engine, including tile distribution, turn progression, competing-action resolution, special-tile handling, and recursive winning-hand detection, alongside an interactive terminal interface.
+\end{itemize}
+
+\clearpage
+
+\cvsection{Creative \& Interdisciplinary Work}
+
+\cvevent{5 Centimeters per Second \textemdash{} Film Re-Sound}{Exhibited Work, 2026 \jptext{創・藝百匯} Joint Exhibition}{Mar. 2026}{NYCU}
+\begin{itemize}
+  \item Re-sounded a seven-minute film excerpt by removing its original soundtrack and reconstructing Japanese dialogue, ambience, train and station audio, and Foley.
+  \item Recorded and synchronized Japanese dialogue and newly produced or sourced sounds to rebuild the scene's pacing and atmosphere.
+  \item Performed as the drummer of the student jazz ensemble at the exhibition's opening reception.
+\end{itemize}
+
+\cvsection{Japanese Language \& Cross-Cultural Engagement}
+
+\cvevent{Japanese Student Counselor \& Guide}{NYCU Taiwan Culture \& Tech Summer School}{Summers 2024 \& 2025}{Hsinchu, Taiwan}
+\begin{itemize}
+  \item Selected as program staff for two consecutive years to support cultural exchange between Taiwanese and Japanese students.
+  \item Systematically identified operational and program-design issues across logistics, accommodation, communication, curriculum accessibility, and site visits; volunteered as the sole student counselor at the post-program review and raised these issues directly with university program leadership.
+  \item Interpreted technical topics, including semiconductor physics, from Mandarin to Japanese; coordinated tours and supported participant communication and safety.
+\end{itemize}
+
+\divider
+
+\cvevent{Special Award, 10th AGC Japanese Presentation Contest}{AGC Display Glass Taiwan}{Dec. 2023}{Taichung, Taiwan}
+\begin{itemize}
+  \item Presented in Japanese an AI-driven proposal to support people experiencing depression.
+\end{itemize}
+\end{fullwidth}
+
+\end{document}
